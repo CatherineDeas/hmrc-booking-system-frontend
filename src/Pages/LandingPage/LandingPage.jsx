@@ -1,6 +1,8 @@
 import React from "react";
 import DefaultLabel from "../../Components/DefaultLabel";
 import BodyContent from "../../Components/BodyContent";
+import StartButton from "../../Components/StartButton";
+
 import styles from "./LandingPage.module.scss";
 
 const LandingPage = () => {
@@ -17,6 +19,7 @@ const LandingPage = () => {
     <>
       <DefaultLabel title="Book an appointment"/>
       <BodyContent content={ bodyContent }/>
+      <StartButton buttonLabel="Start now"/>
     </>
   );
 };
