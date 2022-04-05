@@ -19,7 +19,7 @@ const LandingPage = () => {
     <>
       <DefaultLabel title="Book an appointment"/>
       <BodyContent content={ bodyContent }/>
-      <StartButton buttonLabel="Start now"/>
+      <StartButton buttonLabel="Start now" buttonUrl="/" />
     </>
   );
 };
