@@ -111,6 +111,7 @@ The `Template` component wraps the main app, but it can take several different p
 | `footer `            | `{{footerProp1: [FooterProp1Value]}}` | JS object containiner key-pair values for the Footer component props |
 | `mainClassName`      | "custom-main-class-name"              | Add a classname to the main container                                |
 | `title`              | "Page title"                          | Give `title` meta value selector                                     |
+| `
 
 <br>
 <br>

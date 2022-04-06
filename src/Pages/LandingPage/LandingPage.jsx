@@ -4,6 +4,7 @@ import BodyContent from "../../Components/BodyContent";
 import StartButton from "../../Components/StartButton";
 import LowerBody from "../../Components/LowerBody";
 import styles from "./LandingPage.module.scss";
+import SideBody from "../../Components/SideBody";
 
 const LandingPage = () => {
   const bodyContent = (
@@ -24,6 +25,7 @@ const LandingPage = () => {
       <BodyContent content={ bodyContent }/>
       <StartButton buttonLabel="Start now" buttonUrl="/" />
       <LowerBody subheading="Before you start" textContent={ textContent }/>
+      <SideBody />
     </>
   );
 };
