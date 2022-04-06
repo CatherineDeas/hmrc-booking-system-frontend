@@ -16,16 +16,26 @@ const LandingPage = () => {
       <p>Booking takes around 5 minutes.</p>
     </>
   );
+
   const textContent = (
-    <p>If you already have an appointment, you can view, amend, or cancel an existing <a href="/">booking here.</a></p>
+    <p>If you already have an appointment, you can view, amend, or cancel an existing <a className="govuk-link" href="/">booking here.</a></p>
   )
+
   return (
     <>
-      <DefaultLabel title="Book an appointment"/>
-      <BodyContent content={ bodyContent }/>
-      <StartButton buttonLabel="Start now" buttonUrl="/" />
+    <div className="govuk-grid-row">
+      <div className="govuk-grid-column-two-thirds">
+        <DefaultLabel title="Book an appointment"/>
+        <BodyContent content={ bodyContent }/>
+        <StartButton buttonLabel="Start now" buttonUrl="/" />
+      </div>
+
+      <div className="govuk-grid-column-one-third">
+        <SideBody subheading="Already have an appointment?" link="Manage your booking" />
+      </div>
+    </div>
+    
       <LowerBody subheading="Before you start" textContent={ textContent }/>
-      <SideBody />
     </>
   );
 };
