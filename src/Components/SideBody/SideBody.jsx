@@ -5,7 +5,7 @@ import styles from "./SideBody.module.scss";
 const SideBody = ({ subheading, link }) => {
   const sideContent = (
     <>
-      <h2>{ subheading }</h2>
+      <h2 className={styles.subheading}>{ subheading }</h2>
       <a className="govuk-link" href="/">{ link }</a>
     </>
   )
