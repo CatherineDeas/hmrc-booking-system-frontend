@@ -106,7 +106,8 @@ The `Template` component wraps the main app, but it can take several different p
 
 # Component Workflow
 
-## Creating and using a Page
+
+## Creating and using a Page
 
 To create pages which will be used, we use the `mkrc` package to generate the boilerplate inside the `pages` directory.
 

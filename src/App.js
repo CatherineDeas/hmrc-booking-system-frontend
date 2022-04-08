@@ -3,6 +3,7 @@ import { Template } from "govuk-react-jsx";
 import { Route, Routes, BrowserRouter as Router } from "react-router-dom";
 // import DefaultLabel from "./Components/DefaultLabel";
 import LandingPage from "./Pages/LandingPage";
+import AppointmentSelection from "./Pages/AppointmentSelection";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         header={{ serviceName:"HMRC Booking System", serviceUrlHref:"/" }}>
         <Routes>
           <Route path="/" element={<LandingPage />} />
+          <Route path="/appointments" element={<AppointmentSelection />} />
         </Routes>
       </Template>
     </Router>
