@@ -46,8 +46,17 @@ const CalendarTabs = () => {
     return firstMonday
   }
 
-
   // store all 4 weeks
+  const getAllWeeks = () => {
+    let weeks = []
+
+    for (let i = 0; i < 28; i += 7) {
+      let currentMonday = new Date(monOfFirstWeek())
+      currentMonday.setDate(currentMonday.getDate() + i)
+      weeks.push(currentMonday)
+    }
+    return weeks
+  }
 
   // Format week into tab label
   const formatDateToWeek = date => {
@@ -57,7 +66,6 @@ const CalendarTabs = () => {
     if ( day < 10 ) day = "0" + day
     return `Week of ${ day }/${ month }/${ date.getFullYear() }`
   }
-console.log(formatDateToWeek(currentDate))
 
   return (
     <AppointmentTabs tabs={ weeks } />
