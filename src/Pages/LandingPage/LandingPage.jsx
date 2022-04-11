@@ -3,8 +3,8 @@ import DefaultLabel from "../../Components/DefaultLabel";
 import BodyContent from "../../Components/BodyContent";
 import StartButton from "../../Components/StartButton";
 import LowerBody from "../../Components/LowerBody";
-import styles from "./LandingPage.module.scss";
 import SideBody from "../../Components/SideBody";
+import styles from "./LandingPage.module.scss";
 
 const LandingPage = () => {
   const bodyContent = (
