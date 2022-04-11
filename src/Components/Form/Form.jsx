@@ -8,16 +8,31 @@ const Form = () => {
   const onSubmit = (data) => console.log(data);
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      {/* <DefaultInput label="Name" {...register("name")} /> */}
-      <div className="govuk-form-group">
-      <label className="govuk-label">Name</label>
-        <input className="govuk-input" {...register("nam")} />
-        <input type="submit" />
-        <input {...register("email")} />
-        <input {...register("telephone")} />
-      </div>
-    </form>
+    
+    <div className="govuk-grid-row">
+      <form className="govuk-grid-column-two-thirds"       onSubmit={handleSubmit(onSubmit)}
+      >
+        <div className="govuk-form-group">
+          <label className="govuk-label">Name</label>
+          <input className="govuk-input govuk-input--width-20" {...register("nam")} />
+        </div>
+
+        <div className="govuk-form-group">
+          <label className="govuk-label">Email</label>
+          <div id="event-name-hint" class="govuk-hint">
+            We'll use this to send you your booking details
+          </div>
+          <input className="govuk-input govuk-input--width-20" {...register("email")} />
+        </div>
+        
+        <div className="govuk-form-group">
+          <label className="govuk-label">Telephone number</label>
+          <input className="govuk-input govuk-input--width-20" {...register("telephone")} />
+        </div>
+          <input type="submit" />
+      </form>
+      <div className="govuk-grid-column-one-third"></div>
+    </div>
   );
 };
 

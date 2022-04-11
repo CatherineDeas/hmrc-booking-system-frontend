@@ -6,7 +6,7 @@ const DefaultLabel = ({title}) => {
     <>
       <Label className="govuk-label--xl" isPageHeading>
         {title}
-        
+
       </Label>
     </>
   );
