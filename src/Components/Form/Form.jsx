@@ -1,10 +1,20 @@
 import React from "react";
 import styles from "./Form.module.scss";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
+
 const Form = () => {
   const { register, handleSubmit } = useForm();
-  const onSubmit = (data) => (console.log(data));
-  
+  const onSubmit = (data) => {
+    (console.log(data));
+  }
+
+  let navigate = useNavigate(); 
+  const routeChange = () =>{ 
+    let path = `/appointments`; 
+    navigate(path);
+  }
+
   return (
     
     <div className="govuk-grid-row">
@@ -27,7 +37,7 @@ const Form = () => {
           <label className="govuk-label">Telephone number</label>
           <input className="govuk-input govuk-input--width-20" pattern="^\s*\(?(020[7,8]{1}\)?[ ]?[1-9]{1}[0-9{2}[ ]?[0-9]{4})|(0[1-8]{1}[0-9]{3}\)?[ ]?[1-9]{1}[0-9]{2}[ ]?[0-9]{3})\s*$" required {...register("telephone")} />
         </div>
-          <input className="govuk-button" type="submit" value="Continue" />
+          <input onClick={routeChange}className="govuk-button" type="submit" value="Continue" />
       </form>
       <div className="govuk-grid-column-one-third"></div>
     </div>
