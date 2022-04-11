@@ -1,10 +1,16 @@
 import React from "react";
+import { Tabs } from "govuk-react-jsx";
 import styles from "./AppointmentTabs.module.scss";
 
-const AppointmentTabs = () => {
+
+const AppointmentTabs = ({ tabs }) => {
   return (
     <>
-      <p>AppointmentTabs works</p>
+      <Tabs
+  idPrefix=""
+  items={ tabs }
+  title="Contents"
+/>
     </>
   );
 };
