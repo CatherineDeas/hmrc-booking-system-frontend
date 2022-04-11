@@ -1,6 +1,7 @@
 import React from "react";
 import DefaultLabel from "../../Components/DefaultLabel";
 import BodyContent from "../../Components/BodyContent";
+import AppointmentTabs from "../../Components/AppointmentTabs"
 import styles from "./AppointmentSelection.module.scss";
 
 const AppointmentSelection = () => {
@@ -13,6 +14,7 @@ const AppointmentSelection = () => {
     <>
       <DefaultLabel title="Choose a date" />
       <BodyContent content={ content } />
+      <AppointmentTabs />
     </>
   );
 };
