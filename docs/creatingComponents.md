@@ -157,6 +157,21 @@ This component will eventually need to import and use components and tools neces
 <br>
 <br>
 
+## Tabs items structure
+`items` is a prop for the `Tabs` components which receives an array of objects. 
 
-
-
+```javascript
+[
+  {
+    id: 'tab id for JS logic',
+    label: 'tab label on the page',
+    // Panel is an object that contains the content that will appear in this tab
+    panel: {
+      children: [
+        // Array of elements to appear in the tab
+        <h2 key="0" /* Key value represents order in which elements appear */ className="govuk-heading-l">Tab 2</h2>
+      ]
+    }
+  }
+]
+```
