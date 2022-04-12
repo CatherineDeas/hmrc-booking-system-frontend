@@ -1,45 +1,60 @@
-import React from "react";
+import React, { useLayoutEffect } from "react";
 import AppointmentTabs from "../AppointmentTabs"
 import styles from "./CalendarTabs.module.scss";
 
 const CalendarTabs = () => {
-  const weeks = [
-    {
-      id: "test-1",
-      label: "test 1",
-      panel: {
-        children: [
-          <p key = "0">This is a test</p>
-        ]
-      }
-    }
-  ]
-
-  // Fetch current date
+  const weeks = []
   const currentDate = new Date()
   const currentWeekDay = currentDate.toString().slice(0, 3)
+
+  // Check if it's the weekend
   const todayIsWeekend = () => { 
     if (currentWeekDay === "Sat" || currentWeekDay === "Sun") { return true }
     return false
   }
 
+  // Populate weeks with week objects
+  const populateWeeks = () => {
+    const mondays = getAllWeeks()
+
+    mondays.forEach((monday, index) => {
+      const week = {
+        id: `week-${index+1}`,
+        label: formatDateToWeek(new Date(monday)),
+        panel: {
+          children: [
+            <p key = "0">hello { `${monday}` }</p>
+          ]
+        }
+      }
+      weeks.push(week)
+
+    })
+  }
+
+  // add days to date as part of Date prototype
+  Date.prototype.addDays = function(days) {
+    var result = new Date(this.valueOf());
+    result.setDate(result.getDate() + days);
+    return result;
+  }
+
   // Identify first week in series
   const monOfFirstWeek = () => {
     let firstMonday = currentDate
-
     if (todayIsWeekend()) {
       if (currentWeekDay === "Sun") {
-        firstMonday = firstMonday.setDate(firstMonday.getDate() + 1)
+        firstMonday.addDays(1)
       }
       if (currentWeekDay === "Sat") {
-        firstMonday = firstMonday.setDate(firstMonday.getDate() + 2)
+        firstMonday.addDays(2)
       }
     }
 
-    if (!todayIsWeekend() && currentDate.getDay() != 1) {
+    if (!todayIsWeekend()) {
       if (currentDate.getDay() != 0 && currentDate.getDay() != 6) {
         const todayNumber = currentDate.getDay()
-        firstMonday = firstMonday.setDate(firstMonday - (todayNumber - 1))
+        firstMonday = firstMonday.addDays(1 - todayNumber)
       }
     }
 
@@ -66,6 +81,8 @@ const CalendarTabs = () => {
     if ( day < 10 ) day = "0" + day
     return `Week of ${ day }/${ month }/${ date.getFullYear() }`
   }
+
+  populateWeeks()
 
   return (
     <AppointmentTabs tabs={ weeks } />
