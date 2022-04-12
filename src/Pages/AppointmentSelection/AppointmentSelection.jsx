@@ -5,7 +5,6 @@ import WeekTabs from "../../Components/WeekTabs";
 import styles from "./AppointmentSelection.module.scss";
 
 const AppointmentSelection = () => {
-  const title = "Choose a date"
   const content = (
     <p>Select a week and weekday to see the available time slots.</p>
   )
