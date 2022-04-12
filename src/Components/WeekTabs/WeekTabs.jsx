@@ -1,8 +1,8 @@
 import React, { useLayoutEffect } from "react";
 import AppointmentTabs from "../AppointmentTabs"
-import styles from "./CalendarTabs.module.scss";
+import styles from "./WeekTabs.module.scss";
 
-const CalendarTabs = () => {
+const WeekTabs = () => {
   const weeks = []
   const currentDate = new Date()
   const currentWeekDay = currentDate.toString().slice(0, 3)
@@ -28,7 +28,6 @@ const CalendarTabs = () => {
         }
       }
       weeks.push(week)
-
     })
   }
 
@@ -89,4 +88,4 @@ const CalendarTabs = () => {
   );
 };
 
-export default CalendarTabs;
+export default WeekTabs;
