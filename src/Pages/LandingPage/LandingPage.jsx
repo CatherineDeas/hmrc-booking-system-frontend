@@ -27,7 +27,7 @@ const LandingPage = () => {
       <div className="govuk-grid-column-two-thirds">
         <DefaultLabel title="Book an appointment"/>
         <BodyContent content={ bodyContent }/>
-        <StartButton buttonLabel="Start now" buttonUrl="/" />
+        <StartButton buttonLabel="Start now" buttonUrl="/contactdetails" />
       </div>
 
       <div className="govuk-grid-column-one-third">
