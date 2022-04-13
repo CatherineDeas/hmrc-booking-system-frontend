@@ -7,14 +7,18 @@ const RadioButton = ({ label }) => {
   const handleChange = () => {
     setValue(!value);
     console.log("clicked!");
-  }; 
+  };
 
   return (
-    <div>
-      <label>
-        <input name="time-slot" type="radio" checked={value} onChange={handleChange} />
-        {label}
-      </label>
+    <div className="govuk-radios__item">
+      <input
+        className="govuk-radios__input"
+        name="time-slot"
+        type="radio"
+        checked={value}
+        onChange={handleChange}
+      />
+      <label className="govuk-label govuk-radios__label">{label}</label>
     </div>
   );
 };
