@@ -1,6 +1,6 @@
 import React, { useLayoutEffect } from "react";
 import AppointmentTabs from "../AppointmentTabs"
-import DayTabs from "../../Components/DayTabs";
+import DayAccordion from "../DayAccordion"
 import styles from "./WeekTabs.module.scss";
 
 const WeekTabs = () => {
@@ -24,7 +24,9 @@ const WeekTabs = () => {
         label: formatDateToWeek(new Date(monday)),
         panel: {
           children: [
-            <div><DayTabs /></div>
+            <div key="0">
+              <DayAccordion />
+            </div>
           ]
         }
       }

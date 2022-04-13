@@ -5,6 +5,7 @@ import StartButton from "../../Components/StartButton";
 import LowerBody from "../../Components/LowerBody";
 import SideBody from "../../Components/SideBody";
 import styles from "./LandingPage.module.scss";
+import { Radios } from "govuk-react-jsx";
 
 const LandingPage = () => {
   const bodyContent = (
@@ -36,6 +37,8 @@ const LandingPage = () => {
     </div>
     
       <LowerBody subheading="Before you start" textContent={ textContent }/>
+      
+
     </>
   );
 };
