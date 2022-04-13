@@ -1,24 +1,26 @@
 import React from "react";
 import styles from "./RadioButton.module.scss";
 
-const RadioButton = ({ label }) => {
+const RadioButton = ({ label, id }) => {
   const [value, setValue] = React.useState(false);
 
   const handleChange = () => {
     setValue(!value);
-    console.log("clicked!");
   };
 
   return (
     <div className="govuk-radios__item">
       <input
+        id={id}
         className="govuk-radios__input"
         name="time-slot"
         type="radio"
-        checked={value}
+        defaultValue={true}
         onChange={handleChange}
       />
-      <label className="govuk-label govuk-radios__label">{label}</label>
+      <label for={id} className="govuk-label govuk-radios__label">
+        {label}
+      </label>
     </div>
   );
 };

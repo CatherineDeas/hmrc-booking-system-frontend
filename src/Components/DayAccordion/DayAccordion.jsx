@@ -1,11 +1,9 @@
 import React from "react";
 import styles from "./DayAccordion.module.scss";
 import { Accordion } from "govuk-react-jsx";
-import RadioButton from "../RadioButton/RadioButton";
+import AvailableAppointments from "../AvailableAppointments";
 
 const DayAccordion = () => {
-  
-
   return (
     <>
       <Accordion
@@ -15,8 +13,7 @@ const DayAccordion = () => {
             content: {
               children: [
                 <div key="0">
-                  <RadioButton label="9.00am" />
-                  <RadioButton label="9.30am" />
+                  <AvailableAppointments />
                 </div>,
               ],
             },
