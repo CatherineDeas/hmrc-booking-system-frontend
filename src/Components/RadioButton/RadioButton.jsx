@@ -18,7 +18,7 @@ const RadioButton = ({ label, id }) => {
         defaultValue={true}
         onChange={handleChange}
       />
-      <label for={id} className="govuk-label govuk-radios__label">
+      <label htmlFor={id} className="govuk-label govuk-radios__label">
         {label}
       </label>
     </div>
