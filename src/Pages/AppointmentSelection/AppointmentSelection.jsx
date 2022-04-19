@@ -3,8 +3,8 @@ import DefaultLabel from "../../Components/DefaultLabel";
 import BodyContent from "../../Components/BodyContent";
 import WeekTabs from "../../Components/WeekTabs";
 import styles from "./AppointmentSelection.module.scss";
-import { Button } from "govuk-react-jsx"
-import BackButton from "../../Components/BackButton"
+import { Button } from "govuk-react-jsx";
+import BackButton from "../../Components/BackButton";
 
 const AppointmentSelection = () => {
   const content = (
