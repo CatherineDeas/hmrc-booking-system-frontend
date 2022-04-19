@@ -13,7 +13,8 @@ const Form = () => {
   };
 
   const handlePost = async(data) => {
-    axios.post(`${process.env.REACT_APP_BACKEND_URL}`, data)
+    axios.post('https://hmrc-booking-system-backend.herokuapp.com/api/userinfo', data)
+    // axios.post(`${process.env.REACT_APP_BACKEND_URL}`, data)
       .then(res => {
         console.log(res);
         console.log(res.data);
