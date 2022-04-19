@@ -1,10 +1,11 @@
 import React from "react";
 import styles from "./Confirmation.module.scss";
+import BackButton from "../../Components/BackButton"
 
 const Confirmation = () => {
   return (
     <>
-      <p>Confirmation works</p>
+      <BackButton path="/" label="Home" />
     </>
   );
 };

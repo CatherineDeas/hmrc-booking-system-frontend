@@ -24,21 +24,19 @@ const LandingPage = () => {
 
   return (
     <>
-    <div className="govuk-grid-row">
-      <div className="govuk-grid-column-two-thirds">
-        <DefaultLabel title="Book an appointment"/>
-        <BodyContent content={ bodyContent }/>
-        <StartButton buttonLabel="Start now" buttonUrl="/contactdetails" />
-      </div>
+      <div className="govuk-grid-row">
+        <div className="govuk-grid-column-two-thirds">
+          <DefaultLabel title="Book an appointment"/>
+          <BodyContent content={ bodyContent }/>
+          <StartButton buttonLabel="Start now" buttonUrl="/contactdetails" />
+        </div>
 
-      <div className="govuk-grid-column-one-third">
-        <SideBody subheading="Already have an appointment?" link="Manage your booking" />
+        <div className="govuk-grid-column-one-third">
+          <SideBody subheading="Already have an appointment?" link="Manage your booking" />
+        </div>
       </div>
-    </div>
-    
-      <LowerBody subheading="Before you start" textContent={ textContent }/>
       
-
+      <LowerBody subheading="Before you start" textContent={ textContent }/>
     </>
   );
 };
