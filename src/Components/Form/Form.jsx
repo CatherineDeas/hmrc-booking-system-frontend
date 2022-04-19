@@ -2,19 +2,30 @@ import React from "react";
 import styles from "./Form.module.scss";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const Form = () => {
   const saveToLocalStorage = (data) => {
-    localStorage.setItem("Name", data.name);
-    localStorage.setItem("Email", data.email);
-    localStorage.setItem("Telephone", data.telephone);
-    console.log(data);
+    localStorage.setItem("Name", data.Name);
+    localStorage.setItem("Email", data.Email);
+    localStorage.setItem("Phone", data.Phone);
+    // console.log(data);
   };
+
+  const handlePost = async(data) => {
+    axios.post(`${process.env.REACT_APP_BACKEND_URL}`, data)
+      .then(res => {
+        console.log(res);
+        console.log(res.data);
+    })
+  }
 
   const { register, handleSubmit } = useForm();
 
   const onSubmit = (data) => {
     saveToLocalStorage(data);
+    console.log(data);
+    handlePost(data);
     routeChange();
   };
 
@@ -53,14 +64,14 @@ const Form = () => {
         </div>
 
         <div className="govuk-form-group">
-          <label for="telephone-number" className="govuk-label">
+          <label htmlFor="telephone-number" className="govuk-label">
             Telephone number
           </label>
           <input 
             className="govuk-input govuk-input--width-20"
             type="number"
             required 
-            {...register("telephone", { minLength:10, maxLength:14}, { pattern: /^(((\+44\s?\d{4}|\(?0\d{4}\)?)\s?\d{3}\s?\d{3})|((\+44\s?\d{3}|\(?0\d{3}\)?)\s?\d{3}\s?\d{4})|((\+44\s?\d{2}|\(?0\d{2}\)?)\s?\d{4}\s?\d{4}))(\s?\#(\d{4}|\d{3}))?$/ })} />
+            {...register("phone", { minLength:10, maxLength:14}, { pattern: /^(((\+44\s?\d{4}|\(?0\d{4}\)?)\s?\d{3}\s?\d{3})|((\+44\s?\d{3}|\(?0\d{3}\)?)\s?\d{3}\s?\d{4})|((\+44\s?\d{2}|\(?0\d{2}\)?)\s?\d{4}\s?\d{4}))(\s?\#(\d{4}|\d{3}))?$/ })} />
         </div>
         <input className="govuk-button" type="submit" value="Continue" />
       </form>
