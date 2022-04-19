@@ -4,6 +4,7 @@ import BodyContent from "../../Components/BodyContent";
 import WeekTabs from "../../Components/WeekTabs";
 import styles from "./AppointmentSelection.module.scss";
 import { Button } from "govuk-react-jsx"
+import BackButton from "../../Components/BackButton"
 
 const AppointmentSelection = () => {
   const content = (
@@ -12,6 +13,7 @@ const AppointmentSelection = () => {
 
   return (
     <>
+      <BackButton path="/contactdetails" />
       <DefaultLabel title="Choose a date" />
       <BodyContent content={ content } />
       <WeekTabs />
