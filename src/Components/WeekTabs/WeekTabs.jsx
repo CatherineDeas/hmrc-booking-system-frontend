@@ -24,8 +24,12 @@ const WeekTabs = () => {
         label: formatDateToWeek(new Date(monday)),
         panel: {
           children: [
-            <div key="0">
-              <DayAccordion />
+            <div key={`${index}`}>
+              <DayAccordion day='Monday' />
+              <DayAccordion day='Tuesday' />
+              <DayAccordion day="Wednesday" />
+              <DayAccordion day="Thursday" />
+              <DayAccordion day="Friday" />
             </div>
           ]
         }

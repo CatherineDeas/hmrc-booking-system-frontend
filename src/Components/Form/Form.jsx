@@ -9,14 +9,12 @@ const Form = () => {
     localStorage.setItem("Name", data.Name);
     localStorage.setItem("Email", data.Email);
     localStorage.setItem("Phone", data.Phone);
-    // console.log(data);
   };
 
   const handlePost = async(data) => {
-    // axios.post('https://hmrc-booking-system-backend.herokuapp.com/api/userinfo', data)
     axios.post(`${process.env.REACT_APP_BACKEND_URL}`, data)
       .then(res => {
-        console.log(res.data);
+        console.log(res.status);
     })
   }
 
@@ -24,7 +22,6 @@ const Form = () => {
 
   const onSubmit = (data) => {
     saveToLocalStorage(data);
-    console.log(data);
     handlePost(data);
     routeChange();
   };
