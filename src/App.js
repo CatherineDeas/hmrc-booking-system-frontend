@@ -5,6 +5,7 @@ import { Route, Routes, BrowserRouter as Router } from "react-router-dom";
 import LandingPage from "./Pages/LandingPage";
 import ContactDetails from "./Pages/ContactDetails";
 import AppointmentSelection from "./Pages/AppointmentSelection";
+import Confirmation from "./Pages/Confirmation";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/" element={<LandingPage />} />
           <Route path="/contactdetails" element={<ContactDetails />} />
           <Route path="/appointments" element={<AppointmentSelection />} />
+          <Route path="/confirmation" element={<Confirmation />} />
         </Routes>
       </Template>
     </Router>
